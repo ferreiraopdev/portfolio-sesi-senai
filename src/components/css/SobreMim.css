@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: #fff;
     margin-top: 10rem;
     width: 100%;
 }
@@ -10,7 +9,6 @@
 .sobre-mim {
     padding: 5rem 5rem;
     width: 100%;
-    background: var(--bg--body);
     color: var(--primary);
 }
 
@@ -28,7 +26,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: var(--bg--body);
 }
 
 .meu-perfil .minha-pessoa {
@@ -36,11 +33,24 @@
     width: 60%;
 }
 
-.gatinho {
+.mouse {
     position: absolute;
-    width: 30%;
+    width: 27%;
     top: 70%;
     left: 70%;
+    animation: mexer-mouse 1s infinite alternate;
+}
+
+@keyframes mexer-mouse {
+    from {
+        transform: translateX(0) translateY(0);
+    } to {
+        transform: translateX(7px) translateY(7px);
+    }
+}
+
+#me {
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 1100px) {
@@ -50,10 +60,9 @@
     .sobre-mim {
         text-align: center;
     }
-    .gatinho {
-    position: absolute;
-    width: 50%;
-    left: 40%;
-    top: 40%;
-}
+    .mouse{
+        top: 35%;
+        width: 50%;
+        left: 47%;
+    }
 }
