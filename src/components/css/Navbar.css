@@ -1,0 +1,16 @@
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 3rem;
+}
+
+nav a, p {
+    color: var(--primary);
+    font-weight: 300;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration-line: underline;
+}

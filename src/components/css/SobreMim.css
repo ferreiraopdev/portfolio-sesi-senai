@@ -1,0 +1,59 @@
+.box-sobre-mim {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    margin-top: 10rem;
+    width: 100%;
+}
+
+.sobre-mim {
+    padding: 5rem 5rem;
+    width: 100%;
+    background: var(--bg--body);
+    color: var(--primary);
+}
+
+.sobre-mim h1 {
+    font-size: 5rem;
+    font-weight: 500;
+}
+
+.sobre-mim p {
+    font-size: 1.3rem;
+}
+
+.meu-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--bg--body);
+}
+
+.meu-perfil .minha-pessoa {
+    border-radius: 50%;
+    width: 60%;
+}
+
+.gatinho {
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    left: 70%;
+}
+
+@media (max-width: 1100px) {
+    .box-sobre-mim {
+        flex-wrap: wrap-reverse;
+    }
+    .sobre-mim {
+        text-align: center;
+    }
+    .gatinho {
+    position: absolute;
+    width: 50%;
+    left: 40%;
+    top: 40%;
+}
+}
