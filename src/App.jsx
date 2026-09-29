@@ -1,5 +1,6 @@
 import './App.css'
 import Navbar from './components/Navbar'
+import Frase from './components/Frase'
 import SobreMim from './components/SobreMim'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Navbar />
       <SobreMim />
+      <Frase />
     </>
   )
 }
