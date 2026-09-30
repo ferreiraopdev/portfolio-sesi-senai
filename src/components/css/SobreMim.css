@@ -1,5 +1,4 @@
 .box-sobre-mim {
-    position: relative;
     display: flex;
     justify-content: center;
     margin-top: 10rem;
@@ -20,12 +19,11 @@
 
 .sobre-mim p {
     font-size: 1.3rem;
+    color: white;
 }
 
 .meu-perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     width: 100%;
 }
 
@@ -36,27 +34,15 @@
 
 .mouse {
     position: absolute;
-    width: 27%;
-    top: 70%;
-    left: 70%;
-    animation: mexer-mouse 1s infinite alternate;
+    width: 70%;
+    bottom: 50%;
+    left: 15%;
 }
 
 #me {
     border-right: 5px solid var(--primary);
     border-bottom: 5px solid var(--primary);
     padding-bottom: 1rem;
-}
-
-@keyframes mexer-mouse {
-    from {
-        transform: translateX(0) translateY(0);
-    } to {
-        transform: translateX(7px) translateY(7px);
-    }
-}
-
-#me {
     margin-bottom: 2rem;
 }
 
@@ -66,10 +52,5 @@
     }
     .sobre-mim {
         text-align: center;
-    }
-    .mouse{
-        top: 35%;
-        width: 50%;
-        left: 47%;
     }
 }
