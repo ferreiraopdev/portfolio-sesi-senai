@@ -1,10 +1,28 @@
+import { useState } from "react"
 import "./css/Navbar.css"
 
+const ComponenteGatos = () => {
+    return (
+        <img className="cat-surprise" src="./../../../af.gif" alt="" />
+    )
+}
+
 const Navbar = () => {
+    const [gatos, setGatos] = useState(false)
+
+    const renderizarGatos = () => {
+        if (gatos) {
+            return <ComponenteGatos />
+        }
+        return (
+            <div></div>
+        )
+    }
+
     return(
         <>
             <nav>
-                <img src="./../../catlogo.png" alt="café" />
+                <button onClick={() => setGatos(!gatos)}><img src="./../../catlogo.png" alt="café" /></button>
                 <div className="nav-links">
                     <a href="#sesi">Sesi</a>
                     <a href="#me">Me</a>
@@ -12,6 +30,7 @@ const Navbar = () => {
                 </div>
                 <a target="_blank" href="https://github.com/ferreiraopdev"><img src="./../../githublogo.png" alt="github" /></a>
             </nav>
+            {renderizarGatos()}
         </>
     )
 }

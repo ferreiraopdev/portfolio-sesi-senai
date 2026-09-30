@@ -1,4 +1,4 @@
-.senai-box {
+.sesi-box {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -9,7 +9,7 @@
     height: 800px;
 }
 
-#senai {
+#sesi {
     font-size: 4rem;
     letter-spacing: 4px;
     color: var(--primary);
@@ -18,7 +18,7 @@
     margin-bottom: 1rem;
 }
 
-.senai-box button {
+.sesi-box button {
     padding: 1rem 2rem;
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--primary);
@@ -27,7 +27,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.senai-box button:hover {
+.sesi-box button:hover {
     transform: scale(1.05);
 }
 

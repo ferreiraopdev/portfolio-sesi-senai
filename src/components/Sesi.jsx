@@ -1,9 +1,9 @@
-import "./css/Senai.css"
+import "./css/Sesi.css"
 
-const Senai = () => {
+const Sesi = () => {
   return (
-    <article className="senai-box">
-        <h1 id="senai">SENAI</h1>
+    <article className="sesi-box">
+        <h1 id="sesi">SESI</h1>
         <div className="carrossel">
             <img className="card" src="./../../images.jpeg" alt="" />
             <img className="card" src="./../../images.jpeg" alt="" />
@@ -17,4 +17,4 @@ const Senai = () => {
   )
 }
 
-export default Senai
+export default Sesi
