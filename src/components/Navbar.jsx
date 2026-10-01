@@ -3,7 +3,9 @@ import "./css/Navbar.css"
 
 const ComponenteGatos = () => {
     return (
-        <img className="cat-surprise" src="./../../../af.gif" alt="" />
+        <div>
+            <img className="cat-surprise" src="./../../../af.gif" alt="" />
+        </div>
     )
 }
 

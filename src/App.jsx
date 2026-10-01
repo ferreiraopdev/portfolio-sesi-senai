@@ -4,6 +4,7 @@ import Frase from './components/Frase'
 import SobreMim from './components/SobreMim'
 import Senai from './components/Senai'
 import Sesi from './components/Sesi'
+import Rodape from './components/Rodape'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Frase />
       <Senai />
       <Sesi />
+      <Rodape />
     </>
   )
 }

@@ -1,79 +1,8 @@
-.sesi-box {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem 3rem;
-    width: 100%;
-    height: 800px;
-}
-
 #sesi {
     font-size: 4rem;
     letter-spacing: 4px;
     color: var(--primary);
     border-left: 10px solid var(--secondary);
     padding-left: 10px;
-    margin-bottom: 1rem;
-}
-
-.sesi-box button {
-    padding: 1rem 2rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--primary);
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.sesi-box button:hover {
-    transform: scale(1.05);
-}
-
-.align-button {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: end;
-}
-
-.carrossel {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 1.5rem;
-    scroll-snap-type: x mandatory;
-    scroll-padding-left: 4rem;
-    gap: 1rem;
-    max-width: 100%;
-    min-width: 0;
-}
-
-.carrossel::-webkit-scrollbar{
-    height: 8px;
-}
-
-.carrossel::-webkit-scrollbar-thumb{
-    background-color: #333;
-    border-radius: 8px;
-}
-
-.card {
-    flex: 0 0 250px;
-    height: 350px;
-    border-radius: 8px;
-    overflow: hidden;
-    scroll-snap-align: start;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    margin-bottom: 2rem;
 }
