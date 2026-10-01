@@ -9,18 +9,26 @@
     },
     {
         "id": 2,
-        "imagem": "./../../images.jpeg",
-        "titulo": "Nome atividade",
-        "data": "June 2008",
-        "desc": "Fdss",
-        "tipo": "natureza"
+        "imagem": "./../../sesi-pics/feira.jpeg",
+        "titulo": "Habitus",
+        "data": "2026 Jun",
+        "desc": "Apresentação da feira, nosso projeto foi um site para prevenção de doenças chamado Habitus",
+        "tipo": "todas"
     },
     {
         "id": 3,
-        "imagem": "./../../images.jpeg",
-        "titulo": "Nome atividade",
-        "data": "June 2008",
-        "desc": "Fdss",
-        "tipo": "linguagens"
+        "imagem": "./../../sesi-pics/eletroscopiodefolhas.jpeg",
+        "titulo": "Eletroscópio de folhas",
+        "data": "2026 Jul",
+        "desc": "Atividade do professor Marcos Alves",
+        "tipo": "natureza"
+    },
+    {
+        "id": 4,
+        "imagem": "./../../sesi-pics/agua.jpeg",
+        "titulo": "Análise da água",
+        "data": "2026 Jul",
+        "desc": "Atividade da professora Jeanynne",
+        "tipo": "natureza"
     }
 ]
