@@ -49,7 +49,7 @@
 }
 
 .card:not(.more-att):hover {
-    background: linear-gradient(180deg, var(--primary) 0%, #1A1A2B 50%);
+    background: linear-gradient(180deg, var(--primary) 0%, #1A1A2B 59%);
 }
 
 .card img {
@@ -89,13 +89,15 @@
     justify-content: center;
     align-items: center;
     transition: all 1s ease;
+    text-decoration: none;
 }
 
 .more-att:hover {
     border: 1px solid var(--primary);
 }
 
-.more-att:hover h1,p {
+.more-att:hover h1,
+p {
     color: var(--primary);
 }
 
@@ -112,6 +114,7 @@
     .inc-cards {
         flex-direction: column;
     }
+
     .card {
         width: 90%;
         height: 600px;

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "imagem": "./../../sesi-pics/ancestralidade.png",
+        "titulo": "Matemática na ancestralidade",
+        "data": "2026 Mai 15",
+        "desc": "Atividade orientada pelo professor Roumel | Elaborar uma apresentação utilizando a tecnologia para explorar elementos ancestrais conectados com a matemática",
+        "tipo": "matematica"
+    },
+    {
+        "id": 2,
+        "imagem": "./../../images.jpeg",
+        "titulo": "Nome atividade",
+        "data": "June 2008",
+        "desc": "Fdss",
+        "tipo": "natureza"
+    },
+    {
+        "id": 3,
+        "imagem": "./../../images.jpeg",
+        "titulo": "Nome atividade",
+        "data": "June 2008",
+        "desc": "Fdss",
+        "tipo": "linguagens"
+    }
+]

@@ -10,7 +10,8 @@ nav {
     z-index: 2;
 }
 
-nav a, p {
+nav a,
+p {
     color: var(--primary);
     font-weight: 300;
     font-size: 1.2rem;
@@ -47,7 +48,9 @@ nav a:hover {
 @keyframes surgir-gato {
     from {
         top: 100%
-    } to {
+    }
+
+    to {
         top: 33%
     }
 }

@@ -12,6 +12,10 @@ const ComponenteGatos = () => {
 const Navbar = () => {
     const [gatos, setGatos] = useState(false)
 
+    if (gatos) {
+        setTimeout(() => {setGatos(!gatos)}, 5000)
+    }
+
     const renderizarGatos = () => {
         if (gatos) {
             return <ComponenteGatos />
@@ -21,7 +25,7 @@ const Navbar = () => {
         )
     }
 
-    return(
+    return (
         <>
             <nav>
                 <button onClick={() => setGatos(!gatos)}><img src="./../../catlogo.png" alt="café" /></button>

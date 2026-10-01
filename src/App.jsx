@@ -1,20 +1,17 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import Frase from './components/Frase'
-import SobreMim from './components/SobreMim'
-import Senai from './components/Senai'
-import Sesi from './components/Sesi'
-import Rodape from './components/Rodape'
+import Senai from './pages/Senai'
+import Sesi from './pages/Sesi'
+import { Route, Routes } from 'react-router-dom'
+import Index from './components/Index'
 
 function App() {
   return (
     <>
-      <Navbar />
-      <SobreMim />
-      <Frase />
-      <Senai />
-      <Sesi />
-      <Rodape />
+      <Routes>
+        <Route path='/senai' element={<Senai />} />
+        <Route path='/sesi' element={<Sesi />} />
+        <Route path='/' element={<Index />} />
+      </Routes>
     </>
   )
 }
