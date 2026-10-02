@@ -3,15 +3,29 @@ import atividades from "./../atividades/sesi/atividadesSesi.json"
 import { useState } from "react"
 
 const SesiCard = ({ objeto }) => {
+  const [imagem, setImagem] = useState(false)
+  const renderizarImagem = () => {
+    if (imagem) {
+      return (
+        <button onClick={() => setImagem(!imagem)} className="box-imagem">
+          <img className="exp-imagem" src={objeto.imagem} />
+        </button>
+      )
+    }
+  }
+
   return (
-    <div className="cards">
-      <img src={objeto.imagem} alt="" />
-      <div className="titulo-data">
-        <h2>{objeto.titulo}</h2>
-        <p>{objeto.data}</p>
+    <>
+      <div className="cards">
+        <button onClick={() => setImagem(!imagem)}><img src={objeto.imagem} alt="" /></button>
+        <div className="titulo-data">
+          <h2>{objeto.titulo}</h2>
+          <p>{objeto.data}</p>
+        </div>
+        <p className="desc">{objeto.desc}</p>
       </div>
-      <p className="desc">{objeto.desc}</p>
-    </div>
+      {renderizarImagem()}
+    </>
   )
 }
 

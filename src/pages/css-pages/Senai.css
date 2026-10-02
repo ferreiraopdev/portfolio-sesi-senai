@@ -29,6 +29,11 @@
     border-radius: 12px;
 }
 
+.cards button {
+    border: none;
+    background: none;
+}
+
 .cards img {
     width: 100%;
     border-radius: 6px;
@@ -98,4 +103,21 @@ hr {
 
 .btn-opcoes:hover{
     color: var(--primary);
+}
+
+.box-imagem {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    border: none;
+}
+
+.exp-imagem {
+    transform: scale(0.5);
 }
