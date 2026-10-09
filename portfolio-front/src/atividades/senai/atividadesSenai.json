@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "imagem": "./../../senai-pics/rating-att.png",
+        "titulo": "Front-end mentor | Desafio",
+        "data": "2026 Set 18",
+        "desc": "Atividade realizada na aula do Carlos Wilton onde consistia em reproduzir o layout de uma aplicação pelo Front-end Mentor.",
+        "tipo": "Frontend"
+    },
+    {
+        "id": 2,
+        "imagem": "./../../senai-pics/portal-jes.png",
+        "titulo": "Portal JES",
+        "data": "2026 Set 11",
+        "desc": "Projeto realizado como AD para o dia dos jogos escolares da escola.",
+        "tipo": "Fullstack"
+    },
+    {
+        "id": 3,
+        "imagem": "./../../senai-pics/cyber-ninja.png",
+        "titulo": "Cyber Ninja",
+        "data": "2026 Set 9",
+        "desc": "Atividade realizada em sala com o Carlos Wilton",
+        "tipo": "Frontend"
+    },
+    {
+        "id": 4,
+        "imagem": "./../../senai-pics/cyber-city.png",
+        "titulo": "Cyber City",
+        "data": "2026 Ago 31",
+        "desc": "Atividade realizada em sala com o Carlos Wilton | Sábado letivo",
+        "tipo": "Frontend"
+    },
+    {
+        "id": 5,
+        "imagem": "./../../senai-pics/02-usuarios.png",
+        "titulo": "02 Usuários",
+        "data": "2026 Ago 14",
+        "desc": "Atividade realizada em sala com o Carlos Wilton | CRUD, Express, Sequelize, JWT, Vitest, SQL",
+        "tipo": "Backend"
+    },
+    {
+        "id": 6,
+        "imagem": "./../../senai-pics/api-livraria.png",
+        "titulo": "API Livraria",
+        "data": "2026 Jul 8",
+        "desc": "Atividade realizada em sala com o Carlos Wilton | CRUD, Express, Sequelize, SQL",
+        "tipo": "Backend"
+    },
+    {
+        "id": 7,
+        "imagem": "./../../senai-pics/studio-ghibli.png",
+        "titulo": "Studio Ghibli",
+        "data": "2026 Mai 22",
+        "desc": "Atividade realizada em sala com o Kleber Galvão | React com interação de API",
+        "tipo": "Frontend"
+    }
+]

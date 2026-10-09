@@ -1,0 +1,8 @@
+#sesi {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: var(--primary);
+    border-left: 10px solid var(--secondary);
+    padding-left: 10px;
+    margin-bottom: 2rem;
+}
