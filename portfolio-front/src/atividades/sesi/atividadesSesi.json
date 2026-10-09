@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "imagem": "./../../sesi-pics/ancestralidade.png",
+        "titulo": "Matemática na ancestralidade",
+        "data": "2026 Mai 15",
+        "desc": "Atividade orientada pelo professor Roumel | Elaborar uma apresentação utilizando a tecnologia para explorar elementos ancestrais conectados com a matemática",
+        "tipo": "matematica"
+    },
+    {
+        "id": 2,
+        "imagem": "./../../sesi-pics/feira.jpeg",
+        "titulo": "Habitus",
+        "data": "2026 Jun",
+        "desc": "Apresentação da feira, nosso projeto foi um site para prevenção de doenças chamado Habitus",
+        "tipo": "todas"
+    },
+    {
+        "id": 3,
+        "imagem": "./../../sesi-pics/eletroscopiodefolhas.jpeg",
+        "titulo": "Eletroscópio de folhas",
+        "data": "2026 Jul",
+        "desc": "Atividade do professor Marcos Alves",
+        "tipo": "natureza"
+    },
+    {
+        "id": 4,
+        "imagem": "./../../sesi-pics/agua.jpeg",
+        "titulo": "Análise da água",
+        "data": "2026 Jul",
+        "desc": "Atividade da professora Jeanynne",
+        "tipo": "natureza"
+    }
+]

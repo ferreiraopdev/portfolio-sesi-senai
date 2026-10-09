@@ -1,0 +1,13 @@
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    height: 600px;
+}
+
+article p {
+    color: white;
+}

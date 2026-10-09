@@ -1,0 +1,50 @@
+.box-experiencia {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 12rem;
+    height: auto;
+    line-break: auto;
+    padding: 1rem 6rem;
+}
+
+.left-side {
+    text-align: start;
+    width: 100%;
+    padding: 1rem;
+}
+
+.left-side h1 {
+    color: var(--primary);
+    font-size: 5rem;
+}
+
+.left-side p {
+    font-size: 2rem;
+}
+
+.right-side {
+    text-align: end;
+    width: 100%;
+    padding: 1rem;
+}
+
+.right-side h1 {
+    color: var(--primary);
+    font-size: 5rem;
+}
+
+.right-side p {
+    font-size: 2rem;
+}
+
+@media (max-width: 1040px) {
+    .left-side {
+        text-align: center;
+        padding: 1rem;
+    }
+    .right-side {
+        text-align: center;
+        padding: 1rem;
+    }
+}
