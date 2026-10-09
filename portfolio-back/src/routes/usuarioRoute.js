@@ -7,7 +7,7 @@ import { Router } from "express";
 
 const router = Router()
 
-router.post("/", loginUsuario)
+router.post("/login", loginUsuario)
 router.post("/hashhashhash", criarUsuario)
 
 export default router;
