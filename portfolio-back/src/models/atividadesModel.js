@@ -78,15 +78,6 @@ export const atividades = conn.define('atividades',
                 }
             }
         },
-        instituicao: {
-            type: DataTypes.ENUM("sesi", "senai"),
-            allowNull: false,
-            validate: {
-                notEmpty: {
-                    msg: "O campo instituição é obrigatório!"
-                }
-            }
-        },
         data: {
             type: DataTypes.DATE,
             allowNull: false,
@@ -97,7 +88,7 @@ export const atividades = conn.define('atividades',
             }
         },
         categoria : {
-            type: DataTypes.ENUM("fullstack", "frontend", "backend", "matematica", "natureza", "humanas", "linguagens"),
+            type: DataTypes.ENUM("fullstack", "frontend", "backend"),
             allowNull: false,
             validate: {
                 notEmpty: {

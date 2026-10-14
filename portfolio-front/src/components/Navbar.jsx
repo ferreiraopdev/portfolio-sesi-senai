@@ -30,7 +30,6 @@ const Navbar = () => {
             <nav>
                 <button onClick={() => setGatos(!gatos)}><img src="./../../catlogo.png" alt="café" /></button>
                 <div className="nav-links">
-                    <a href="#sesi">Sesi</a>
                     <a href="#me">Me</a>
                     <a href="#senai">Senai</a>
                 </div>

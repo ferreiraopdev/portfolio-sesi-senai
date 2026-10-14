@@ -2,7 +2,8 @@ import { atividades } from "../models/atividadesModel.js"
 import { tratarErro } from "../utils/errorHandle.js"
 
 export const cadastroAtividade = async (req, res) => {
-    const { titulo, descricao, imagem, reflexao, auto_avaliacao, conexoes, instituicao, data, categoria } = req.body
+    const { titulo, descricao, reflexao, auto_avaliacao, conexoes, instituicao, data, categoria } = req.body
+    const imagem = req.file ? req.file.filename : null
 
     if (!titulo || !descricao || !imagem || !reflexao || !auto_avaliacao || !conexoes || !instituicao || !data || !categoria) {
         return res.status(400).json({ message: "Todos os campos precisam estar preenchidos!"})

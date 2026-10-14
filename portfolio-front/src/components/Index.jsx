@@ -3,7 +3,6 @@ import Frase from "./Frase"
 import Navbar from "./Navbar"
 import Rodape from "./Rodape"
 import SenaiIntro from "./SenaiIntro"
-import SesiIntro from "./SesiIntro"
 import SobreMim from "./SobreMim"
 
 const Index = () => {
@@ -13,7 +12,6 @@ const Index = () => {
       <SobreMim />
       <Frase />
       <SenaiIntro />
-      <SesiIntro />
       <Experiencia />
       <Rodape />
     </>

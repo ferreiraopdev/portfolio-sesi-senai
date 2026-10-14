@@ -1,6 +1,5 @@
 import './App.css'
 import Senai from './pages/Senai'
-import Sesi from './pages/Sesi'
 import { Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
 import Login from './pages/Login'
@@ -12,7 +11,6 @@ function App() {
     <>
       <Routes>
         <Route path='/senai' element={<Senai />} />
-        <Route path='/sesi' element={<Sesi />} />
         <Route path='/' element={<Index />} />
         <Route path='/usuario/login' element={<Login />} />
         <Route path='/usuario' element={<Usuario />} />
