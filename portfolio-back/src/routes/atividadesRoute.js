@@ -4,8 +4,10 @@ import {
 
 import { Router } from "express";
 
+import { upload } from '../config/multer.js'
+
 const router = Router()
 
-router.post("/", cadastroAtividade)
+router.post("/", upload.single("imagem"), cadastroAtividade)
 
 export default router;
