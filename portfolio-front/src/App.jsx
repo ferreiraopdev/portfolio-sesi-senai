@@ -4,7 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
 import Login from './pages/Login'
 import Usuario from './pages/Usuario'
-import Atividades from './components/Atividades'
+import Atividades from './pages/Atividades'
 
 function App() {
   return (

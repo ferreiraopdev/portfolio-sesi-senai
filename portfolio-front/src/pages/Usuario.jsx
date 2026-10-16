@@ -3,16 +3,16 @@ import "./css-pages/Usuario.css"
 
 const Usuario = () => {
   return (
-    <nav className="nav-adm">
-        <div className="nav-adm-perfil">
+    <div className="u-box-main">
+        <div className="box-adm-perfil">
             <img src="./../../309555591.jpg" alt="" />
             <h2>Marcos Ferreira</h2>
         </div>
-        <div className="nav-adm-links">
-            <Link className="link-adm">Perfil</Link>
+        <div className="box-adm-links">
             <Link to="/usuario/atividades" className="link-adm">Atividades</Link>
+            <Link className="link-adm">Perfil</Link>
         </div>
-    </nav>
+    </div>
   )
 }
 

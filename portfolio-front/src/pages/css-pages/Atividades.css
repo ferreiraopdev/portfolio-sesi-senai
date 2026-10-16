@@ -1,0 +1,111 @@
+.a-box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: var(--primary);
+}
+
+.a-content {
+    background: #1A1A2B;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 3rem 2rem;
+    max-width: 600px;
+    border-radius: 6px;
+}
+
+.p-info, .s-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-atividade {
+    width: 60%;
+}
+
+.s-atividade-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.s-atividade-btn button {
+    width: 90%;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inp-photo {
+    width: 100%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+.inp-text input[type="text"] {
+    padding: 0.5rem 0;
+    padding-left: 0.7rem;
+    padding-right: 4.7rem;
+    text-align: start;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    color: var(--primary);
+}
+.inp-text input[type="date"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #7a7a7a;
+    padding: 0.5rem;
+}
+
+.inp-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+textarea {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+}
+
+select {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 1rem;
+    border: none;
+    color: var(--primary);
+    outline: none;
+}
+
+select option {
+    color: black;
+}
+
+.btn-submit {
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 1rem;
+    color: var(--primary);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+::placeholder {
+    color: #7a7a7a;
+}
