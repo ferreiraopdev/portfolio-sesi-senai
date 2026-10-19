@@ -6,7 +6,7 @@ const PORT = 3333
 
 const runningServer = async () => {
     try {
-        await conn.sync({ force: true })
+        await conn.sync()
         app.listen(PORT, () => {
             console.log(`Server running on: http://localhost:${PORT}`)
         })

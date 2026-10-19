@@ -7,14 +7,15 @@ import Usuario from './pages/Usuario'
 import Atividades from './pages/Atividades'
 
 function App() {
+  const hasToken = Boolean(localStorage.getItem('token'))
   return (
     <>
       <Routes>
         <Route path='/senai' element={<Senai />} />
         <Route path='/' element={<Index />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/usuario' element={<Usuario />} />
-        <Route path='/usuario/atividades' element={<Atividades />} />
+        <Route path='/usuario' element={<Usuario hasToken={hasToken} />} />
+        <Route path='/usuario/atividades' element={<Atividades hasToken={hasToken} />} />
       </Routes>
     </>
   )
