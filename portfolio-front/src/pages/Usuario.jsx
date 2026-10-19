@@ -10,7 +10,6 @@ const Usuario = () => {
         </div>
         <div className="box-adm-links">
             <Link to="/usuario/atividades" className="link-adm">Atividades</Link>
-            <Link className="link-adm">Perfil</Link>
         </div>
     </div>
   )

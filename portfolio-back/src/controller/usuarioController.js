@@ -1,5 +1,7 @@
 import { tratarErro } from "../utils/errorHandle.js"
 import { usuario } from "../models/usuarioModel.js"
+import { createToken } from "../utils/createUserToken.js"
+import bcrypt from "bcrypt"
 
 export const loginUsuario = async (req, res) => {
     const { email, senha } = req.body
@@ -8,10 +10,23 @@ export const loginUsuario = async (req, res) => {
     }
 
     try {
-        if (email !== "admin@email.com" || senha !== "adm123@") {
-            return res.status(400).json({ message: "credênciais incorretas!"})
+        const usuarioEncontrado = await usuario.scope("comSenha").findOne({
+            where: {
+                email
+            }
+        })
+        
+        if (!usuarioEncontrado) {
+            return res.status(400).json({ message: "Credênciais inválidas!" })
         }
-        res.status(201).json({message: 'logado com sucesso!'})
+
+        const comparaSenha = bcrypt.compare(senha, usuarioEncontrado.senha)
+
+        if (!comparaSenha) {
+            return res.status(400).json({ message: "Credênciais inválidas!" })
+        }
+
+        await createToken(usuarioEncontrado, req, res)
     } catch (error) {
         console.log(error)
         await tratarErro(error, res)

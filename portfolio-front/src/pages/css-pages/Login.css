@@ -8,7 +8,7 @@
 
 .formulario-box {
     padding: 1rem 2rem;
-    background-color: white;
+    background-color: #1A1A2B;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -19,6 +19,10 @@
 }
 
 .formulario-box input {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary);
+    border: none;
     display: flex;
     position: relative;
     text-align: start;
@@ -28,20 +32,29 @@
 }
 
 .formulario-box h1 {
+    color: #fff;
     text-align: center;
     font-size: 2.5rem;
     font-weight: 500;
 }
 
 .formulario-box p {
-    color: #000;
+    color: var(--primary);
 }
 
 .formulario-box button {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--primary);
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    padding: 0.8rem 4rem;
+    padding: 0.7rem 3rem;
+    transition: all 0.3s ease;
+}
+
+.formulario-box button:hover {
+    background: var(--primary);
+    color: #1A1A2B;
 }
 
 .title-login {

@@ -81,6 +81,17 @@ export const usuario = conn.define('usuario',
     {
         timestamps: false,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        defaultScope: {
+            attributes: {
+                exclude: ["senha"]
+            }
+        },
+
+        scopes: {
+            comSenha: {
+                attributes: {}
+            }
+        }
     }
 )
