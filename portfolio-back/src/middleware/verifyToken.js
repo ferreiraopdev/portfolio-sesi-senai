@@ -21,18 +21,18 @@ export const verifyToken = async (req, res, next) => {
         let verifed
 
         try {
-            verifed = jwt.verify(token, "SENHASUPERSEGURA")
+            verifed = jwt.verify(token, "SENHASEGURA")
             console.log(verifed)
         } catch (JwtError) {
             let message
-            if(JwtError.name = "TokenExpiredError"){
+            if(JwtError.name === "TokenExpiredError"){
                 message = "Token expirado. Por favor, faça login novamente."
             } else if (JwtError.name === "JsonWebTokenError") {
                 message = "Token Inválido. O token não confere com a chave de validação, ou o token foi adulterado"
             } else {
                 message = "Erro ao validar token"
             }
-            res.status(401).json({
+            return res.status(401).json({
                 message
             })
         }

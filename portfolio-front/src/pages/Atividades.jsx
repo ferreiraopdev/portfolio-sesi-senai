@@ -3,7 +3,7 @@ import "./css-pages/Atividades.css"
 import { useState } from "react"
 import { url } from "../utils/url.js"
 
-const ModelAtividade = () => {
+const ModelAtividade = ({ token }) => {
     const [titulo, setTitulo] = useState("")
     const [descricao, setDescricao] = useState("")
     const [imagem, setImagem] = useState(null)
@@ -12,6 +12,7 @@ const ModelAtividade = () => {
     const [categoria, setCategoria] = useState("")
     const [reflexao, setReflexao] = useState("")
     const [conexoes, setConexoes] = useState("")
+
     let temImagem = false
 
     if (imagem !== null) {
@@ -20,26 +21,29 @@ const ModelAtividade = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        const formData = new FormData()
+        formData.append("titulo", titulo)
+        formData.append("descricao", descricao)
+        formData.append("imagem", imagem)
+        formData.append("data", data)
+        formData.append("auto_avaliacao", autoAvaliacao)
+        formData.append("categoria", categoria)
+        formData.append("reflexao", reflexao)
+        formData.append("conexoes", conexoes)
+
         try {
             const res = await fetch(`${url}/usuario/atividades`, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Authorization": `Bearer ${token}`
                 },
-                body: JSON.stringify({
-                    titulo,
-                    imagem,
-                    descricao,
-                    data,
-                    auto_avalicao: autoAvaliacao,
-                    categoria,
-                    reflexao,
-                    conexoes
-                })
+                body: formData
             })
 
             if (!res.ok) {
-                throw new Error(`${res.status} Error`)
+                const mensagemErro = await res.json()
+                throw new Error(`${mensagemErro.message}`)
             }
         } catch (error) {
             console.log(error)
@@ -80,9 +84,10 @@ const ModelAtividade = () => {
                         <div className="inp-text">
                             <h2>Categoria</h2>
                             <select onChange={(e) => setCategoria(e.target.value)}>
-                                <option name={categoria} value="">Front-end</option>
-                                <option name={categoria} value="">Back-end</option>
-                                <option name={categoria} value="">Full-stack</option>
+                                <option value="" disabled>Selecione as opções</option>
+                                <option name="Front-end" value="frontend">Front-end</option>
+                                <option name="Back-end" value="backend">Back-end</option>
+                                <option name="Full-stack" value="fullstack">Full-stack</option>
                             </select>
                         </div>
                     </div>
@@ -106,8 +111,8 @@ const ModelAtividade = () => {
 const Atividades = ({ hasToken }) => {
     const navigate = useNavigate()
     const carregarComponentes = () => {
-        if (hasToken) {
-            return <ModelAtividade />
+        if (Boolean(hasToken)) {
+            return <ModelAtividade token={hasToken} />
         } else {
             navigate("/")
         }

@@ -7,7 +7,7 @@ export const cadastroAtividade = async (req, res) => {
     const imagem = req.file ? req.file.filename : null
 
     if (!titulo || !descricao || !imagem || !reflexao || !auto_avaliacao || !conexoes || !data || !categoria) {
-        console.log(titulo, req.file, descricao, data, reflexao, auto_avaliacao, categoria, conexoes)
+        console.log(titulo, imagem, descricao, data, reflexao, auto_avaliacao, categoria)
         return res.status(400).json({ message: "Todos os campos precisam estar preenchidos!"})
     }
 
@@ -44,6 +44,15 @@ export const cadastroAtividade = async (req, res) => {
         })
     } catch (error) {
         console.log(error)
+        await tratarErro(error, res)
+    }
+}
+
+export const listarAtividades = async (req, res) => {
+    try {
+        const att = await atividades.findAll()
+        res.status(200).json(att)
+    } catch (error) {
         await tratarErro(error, res)
     }
 }

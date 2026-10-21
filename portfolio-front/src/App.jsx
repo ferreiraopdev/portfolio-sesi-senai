@@ -7,7 +7,7 @@ import Usuario from './pages/Usuario'
 import Atividades from './pages/Atividades'
 
 function App() {
-  const hasToken = Boolean(localStorage.getItem('token'))
+  const hasToken = localStorage.getItem('token')
   return (
     <>
       <Routes>

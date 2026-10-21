@@ -1,8 +1,18 @@
 import { Link } from "react-router-dom"
 import atividades from "./../atividades/senai/atividadesSenai.json"
 import "./css/SenaiIntro.css"
+import { useState } from "react"
+import { url } from "../utils/url.js"
 
 const CardSenai = ({ objeto }) => {
+  const [atividades, setAtividades] = useState([])
+  const requisicaoBack = async () => {
+    try {
+      const res = await fetch(`${url}`)
+    } catch (error) {
+      
+    }
+  }
   return (
       <div className="card card-att">
         <div className="align-img">
