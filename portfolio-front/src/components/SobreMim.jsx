@@ -1,19 +1,34 @@
-import "./css/SobreMim.css"
+import { useEffect, useState } from "react";
+import "./css/SobreMim.css";
+import { carregarUsuario } from "../utils/rotaGet.js";
+import { url } from "../utils/url.js";
 
 const SobreMim = () => {
-    return (
-        <article className="box-sobre-mim">
-            <div className="sobre-mim">
-                <p className="role">DESENVOLVIMENTO WEB</p>
-                <h1 id="me">Marcos Ferreira</h1>
-                <h2>Desenvolvedor Full-stack</h2>
-                <p>Olá professores de ambas instituições, meu nome é Marcos Ferreira Alves, tenho 18 anos, estou concluindo o EM com curso técnico em informática (Desenvolvimento WEB) e pretendo trabalhar na área.</p>
-            </div>
-            <div className="meu-perfil">
-                <img className="minha-pessoa" src="./../../../309555591.jpg" alt="me" />
-            </div>
+  const [usuario, setUsuario] = useState([]);
+  useEffect(() => {
+    carregarUsuario(setUsuario);
+  }, []);
+  return (
+    <>
+      {usuario.map((u) => (
+        <article id={u.id} className="box-sobre-mim">
+          <div className="sobre-mim">
+            <p className="role">DESENVOLVIMENTO WEB</p>
+            <h1 id="me">{u.nome}</h1>
+            <h2>{u.cargo}</h2>
+            <p>{u.sobre_mim}</p>
+          </div>
+          <div className="meu-perfil">
+            <img
+              className="minha-pessoa"
+              src={`${url}/usuario/atividades/${u.imagem}`}
+              alt={u.nome}
+            />
+          </div>
         </article>
-    )
-}
+      ))}
+    </>
+  );
+};
 
-export default SobreMim
+export default SobreMim;

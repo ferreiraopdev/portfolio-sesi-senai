@@ -1,6 +1,9 @@
 import { atividades } from "../models/atividadesModel.js"
 import { usuario } from "../models/usuarioModel.js"
 import { tratarErro } from "../utils/errorHandle.js"
+import { publicFolder } from "../config/multer.js"
+import fs from 'node:fs'
+import path from "node:path"
 
 export const cadastroAtividade = async (req, res) => {
     const { titulo, descricao, reflexao, auto_avaliacao, conexoes, instituicao, data, categoria } = req.body
@@ -54,5 +57,41 @@ export const listarAtividades = async (req, res) => {
         res.status(200).json(att)
     } catch (error) {
         await tratarErro(error, res)
+    }
+}
+
+export const removerAtividade = async (req, res) => {
+    const { id } = req.params
+    if (!id) {
+        return res.status(400).json({ message: "Nenhuma atividade selecionada" })
+    }
+    try {
+        const att = await atividades.findByPk(id)
+        if (!att) {
+            return res.status(404).json({ message: "Atividade não encontrada!" })
+        }
+
+        await att.destroy()
+        res.status(204).json()
+    } catch (error) {
+        tratarErro(error, res)
+    }
+}
+
+export const getImage = async (req, res) => {
+    try {
+        const {filename} = req.params
+        const caminho = path.join(publicFolder, filename)
+
+        if(!fs.existsSync(caminho)){
+            console.log(caminho)
+            return res.status(404).json({ message: "Imagem não existe!" })
+        }
+
+        console.log(caminho)
+
+        return res.sendFile(caminho)
+    } catch (error) {
+        res.status(500).json({ message: "Erro ao mandar publicação", error: error.message })
     }
 }

@@ -33,14 +33,11 @@ export const loginUsuario = async (req, res) => {
     }
 }
 
-export const criarUsuario = async (req, res) => {
-    const corpo = req.body
-
+export const mostrarUsuario = async (req, res) => {
     try {
-        await usuario.create(corpo)
-        res.status(201).json({message: corpo})
+        const user = await usuario.findAll()
+        res.status(200).json(user)
     } catch (error) {
-        console.log(error)
-        await tratarErro(error, res)
+        tratarErro(error, res)
     }
 }

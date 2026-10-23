@@ -108,6 +108,7 @@ p {
 
 .desc {
     text-align: start;
+    line-break: anywhere;
 }
 
 @media (max-width: 1000px) {

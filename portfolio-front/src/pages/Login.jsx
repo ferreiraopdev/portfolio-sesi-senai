@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css-pages/Login.css";
 import { url } from "../utils/url.js";
 import { useNavigate } from "react-router-dom";
+import { carregarAtividades } from "../utils/rotaGet.js";
 
 const Login = () => {
   const navigate = useNavigate()

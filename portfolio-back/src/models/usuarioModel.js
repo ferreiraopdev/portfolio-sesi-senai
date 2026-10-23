@@ -84,7 +84,7 @@ export const usuario = conn.define('usuario',
         updatedAt: 'updated_at',
         defaultScope: {
             attributes: {
-                exclude: ["senha"]
+                exclude: ["senha", "email"]
             }
         },
 

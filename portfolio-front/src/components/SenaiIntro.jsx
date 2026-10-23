@@ -1,39 +1,32 @@
 import { Link } from "react-router-dom"
-import atividades from "./../atividades/senai/atividadesSenai.json"
 import "./css/SenaiIntro.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { carregarAtividades } from "../utils/rotaGet.js"
 import { url } from "../utils/url.js"
+import { limparData } from "../utils/limparData.js"
 
 const CardSenai = ({ objeto }) => {
-  const [atividades, setAtividades] = useState([])
-  const requisicaoBack = async () => {
-    try {
-      const res = await fetch(`${url}`)
-    } catch (error) {
-      
-    }
-  }
+  const data = limparData(objeto.data)
   return (
       <div className="card card-att">
         <div className="align-img">
-          <img src={objeto.imagem} alt="" />
+          <img src={`${url}/usuario/atividades/${objeto.imagem}`} alt={objeto.titulo} />
         </div>
         <div className="intro-att">
           <h2>{objeto.titulo}</h2>
-          <p>{objeto.data}</p>
+          <p>{data}</p>
         </div>
         <div className="align-desc">
-          <p className="desc">{objeto.desc}</p>
+          <p className="desc">{objeto.descricao}</p>
         </div>
       </div>
   )
 }
 
 const SenaiIntro = () => {
-  const att = atividades
-  const duasAtt = att.slice(0, 2)
-
-  console.log(duasAtt)
+  const [atividades, setAtividades] = useState([])
+  const duasAtt = atividades.slice(0, 2)
+  useEffect(() => { carregarAtividades(setAtividades) }, [])
   return (
     <article className="inc-box">
       <h1 id="senai">SENAI</h1>
