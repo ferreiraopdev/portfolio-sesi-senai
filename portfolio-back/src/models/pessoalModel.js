@@ -81,6 +81,11 @@ export const pessoal = conn.define('pessoal',
     {
         timestamps: false,
         createdAt: 'created_at',
-        updatedAt: 'updated_at'
+        updatedAt: 'updated_at',
+        defaultScope: {
+            attributes: {
+                exclude: ["id_usuario"]
+            }
+        }
     }
 )

@@ -90,19 +90,25 @@
   box-sizing: border-box;
 }
 
-.pergunta-resposta h2 {
+.pergunta-resposta h2,
+.a-pergunta-resposta h2 {
   color: var(--primary);
   margin: 0 0 0.4rem 0;
   font-size: 1.45;
   line-height: 1.35;
 }
 
-.pergunta-resposta p {
+.pergunta-resposta p,
+.a-pergunta-respota p {
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   line-height: 1rem;
   opacity: 0.9;
   line-break: anywhere;
+}
+
+.a-pergunta-resposta p {
+  color: #fff;
 }
 
 /* Responsivo */

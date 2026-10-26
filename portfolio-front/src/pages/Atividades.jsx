@@ -123,7 +123,7 @@ const AddAtividade = ({ token }) => {
           <div className="inp-text">
             <h2>Categoria</h2>
             <select onChange={(e) => setCategoria(e.target.value)}>
-              <option value="" disabled>
+              <option value="*">
                 Selecione as opções
               </option>
               <option name="Front-end" value="frontend">

@@ -3,6 +3,7 @@ import express from 'express';
 
 import rotasUsuario from './routes/usuarioRoute.js'
 import rotasAtividades from './routes/atividadesRoute.js'
+import rotasPessoal from "./routes/pessoalRoute.js"
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(cors({
 
 app.use("/usuario", rotasUsuario)
 app.use("/usuario/atividades", rotasAtividades)
+app.use("/usuario/pessoal", rotasPessoal)
 
 app.use((req, res) => {
     res.status(404).json({

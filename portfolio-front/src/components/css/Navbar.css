@@ -38,19 +38,3 @@ nav button {
 nav a:hover {
     text-decoration-line: underline;
 }
-
-.cat-surprise {
-    position: fixed;
-    top: -100%;
-    animation: surgir-gato 4s;
-}
-
-@keyframes surgir-gato {
-    from {
-        top: 100%
-    }
-
-    to {
-        top: -100%
-    }
-}

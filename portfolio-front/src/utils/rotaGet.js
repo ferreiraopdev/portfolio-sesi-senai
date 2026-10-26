@@ -27,3 +27,17 @@ export const carregarUsuario = async (armazenarUsuario) => {
         console.log(error.message)
     }
 }
+
+export const carregarPessoal = async (armazenarPessoal) => {
+    try {
+        const res = await fetch(`${url}/usuario/pessoal`)
+        if (!res.ok) {
+            const mensagemErro = await res.json()
+            throw new Error(`${mensagemErro.message}`)
+        }
+        const data = await res.json()
+        armazenarPessoal(data)
+    } catch (error) {
+        console.log(error.message)
+    }
+}

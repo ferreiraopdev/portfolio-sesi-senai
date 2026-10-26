@@ -111,6 +111,12 @@ p {
     line-break: anywhere;
 }
 
+#no-content {
+    color: #fff;
+    font-size: 3rem;
+    margin: 0 auto;
+}
+
 @media (max-width: 1000px) {
     .inc-cards {
         flex-direction: column;
