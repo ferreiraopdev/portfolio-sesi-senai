@@ -1,155 +1,223 @@
 .a-box-main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    color: var(--primary);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* melhor que height fixo */
+  height: auto;
+  padding: 1.5rem 1rem; /* evita colar nas bordas */
+  box-sizing: border-box;
+  color: var(--primary);
+  overflow-x: hidden;
 }
 
 /* Cadastrar atividade */
 .a-content {
-    background: #1A1A2B;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 3rem 2rem;
-    max-width: 600px;
-    border-radius: 6px;
+  background: #1a1a2b;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.75rem 1.5rem;
+  width: 100%;
+  max-width: 620px;
+  max-height: 90vh; /* limita a altura da tela */
+  overflow-y: auto; /* scroll interno se necessário */
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.p-info, .s-info {
-    display: flex;
-    justify-content: space-between;
+/* Scroll mais elegante */
+.a-content::-webkit-scrollbar {
+  width: 6px;
+}
+.a-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.p-info,
+.s-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25rem;
+  width: 100%;
 }
 
 .p-atividade {
-    width: 60%;
+  flex: 1 1 58%;
+  min-width: 0; /* impede overflow em flex */
+}
+
+.s-atividade {
+  flex: 1 1 38%;
+  min-width: 0;
 }
 
 .s-atividade-btn {
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex: 0 1 325px; /* largura mais controlada da imagem */
 }
 
 .s-atividade-btn label {
-    cursor: pointer;
-    width: 90%;
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  width: 100%;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1; /* mantém a imagem quadrada */
 }
 
 .inp-photo {
-    width: 100%;
-    cursor: pointer;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.inp-text input[type="text"] {
-    padding: 0.5rem 0;
-    padding-left: 0.7rem;
-    padding-right: 4.7rem;
-    text-align: start;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    outline: none;
-    color: var(--primary);
-}
-.inp-text input[type="date"] {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--primary);
-    padding: 0.5rem;
-}
-
+/* Inputs e textareas responsivos */
 .inp-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 0.5rem;
-    padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.35rem 0;
+  width: 100%;
 }
 
-textarea {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--primary);
-    border: none;
-    padding: 0.5rem;
-    outline: none;
+.inp-text h2 {
+  font-size: 0.95rem;
+  margin: 0;
 }
 
-select {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 0.3rem 1rem;
-    border: none;
-    color: var(--primary);
-    outline: none;
+.inp-text input[type="text"],
+.inp-text input[type="date"],
+.inp-text select,
+.inp-text textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  outline: none;
+  color: var(--primary);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.inp-text input[type="text"],
+.inp-text input[type="date"] {
+  padding: 0.55rem 0.75rem;
+}
+
+.inp-text select {
+  padding: 0.5rem 0.75rem;
+}
+
+.inp-text textarea {
+  padding: 0.55rem 0.75rem;
+  resize: vertical; /* usuário pode aumentar se quiser */
+  min-height: 80px;
 }
 
 select option {
-    color: black;
+  color: black;
 }
 
 .btn-submit {
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 1rem;
-    color: var(--primary);
-    border-radius: 12px;
-    padding: 1rem 2rem;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+  color: var(--primary);
+  border-radius: 12px;
+  padding: 0.9rem 2rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 .btn-submit:hover {
-    background: var(--primary);
-    color: #000;
+  background: var(--primary);
+  color: #000;
 }
 
 ::placeholder {
-    color: #7a7a7a;
+  color: #7a7a7a;
 }
 
-/* Remover Atividade */
+/* ====== Responsivo (telas menores) ====== */
+@media (max-width: 640px) {
+  .p-info,
+  .s-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .p-atividade,
+  .s-atividade {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .s-atividade-btn {
+    flex: 0 0 auto;
+    width: 140px;
+    align-self: center;
+  }
+
+  .a-content {
+    padding: 1.25rem 1rem;
+    max-height: 92vh;
+  }
+
+  .p-info {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Remover Atividade (mantido e um pouco melhorado) */
 .box-rm-att {
-    background-color: #1A1A2B;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    width: 600px;
-    max-width: 600px;
-    max-height: 100px;
-    border-radius: 12px;
+  background-color: #1a1a2b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  gap: 1rem;
 }
 
 .rm-photo-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-width: 0;
 }
 
-.rm-box-photo img{
-    width: 90px;
-    border-radius: 6px;
+.rm-box-photo img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
 .box-rm-att button {
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    border: none;
-    font-size: 0.9rem;
-    color: var(--primary);
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+  padding: 0.8rem 1.4rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .box-rm-att button:hover {
-    background: var(--primary);
-    color: #000;
+  background: var(--primary);
+  color: #000;
 }

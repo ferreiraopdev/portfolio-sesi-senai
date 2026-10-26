@@ -1,47 +1,131 @@
 .p-box-main {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  color: var(--primary);
+  overflow-x: hidden;
 }
 
+/* Formulário */
 .p-content {
-    background: #1A1A2B;
-    padding: 2.5rem 2rem;
+  background: #1a1a2b;
+  padding: 1.75rem 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Scroll elegante */
+.p-content::-webkit-scrollbar,
+.box-result::-webkit-scrollbar {
+  width: 6px;
+}
+.p-content::-webkit-scrollbar-thumb,
+.box-result::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.p-content h1 {
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem 0;
+}
+
+.p-content textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  outline: none;
+  color: var(--primary);
+  padding: 0.6rem 0.75rem;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 90px;
+  font-family: inherit;
 }
 
 .p-content button {
-    padding: 1rem 13rem;
-    margin-top: 1rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--primary);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  margin-top: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: var(--primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .p-content button:hover {
-    background: var(--primary);
-    color: #1A1A2B;
+  background: var(--primary);
+  color: #1a1a2b;
 }
 
+/* Resultado */
 .box-result {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    background: #1A1A2B;
-    max-width: 600px;
-    padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #1a1a2b;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 1.75rem 1.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.pergunta-resposta h2{
-    color: var(--primary);
-    margin-bottom: 0.5rem;
+.pergunta-resposta h2 {
+  color: var(--primary);
+  margin: 0 0 0.4rem 0;
+  font-size: 1rem;
+  line-height: 1.35;
 }
-.pergunta-resposta p{
-    color: #fff;
+
+.pergunta-resposta p {
+  color: #fff;
+  margin: 0;
+  line-height: 1.45;
+  opacity: 0.9;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .p-box-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .p-content,
+  .box-result {
+    max-width: 600px;
+    max-height: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .p-box-main {
+    padding: 1rem 0.75rem;
+  }
+
+  .p-content,
+  .box-result {
+    padding: 1.25rem 1rem;
+  }
 }
