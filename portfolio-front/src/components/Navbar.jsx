@@ -1,13 +1,4 @@
-import { useState } from "react"
 import "./css/Navbar.css"
-
-const ComponenteGatos = () => {
-    return (
-        <div>
-            <img className="cat-surprise" src="./../../../af.gif" alt="" />
-        </div>
-    )
-}
 
 const Navbar = () => {
     return (
@@ -20,7 +11,6 @@ const Navbar = () => {
                 </div>
                 <a target="_blank" href="https://github.com/ferreiraopdev"><img src="./../../githublogo.png" alt="github" /></a>
             </nav>
-            {renderizarGatos()}
         </>
     )
 }
