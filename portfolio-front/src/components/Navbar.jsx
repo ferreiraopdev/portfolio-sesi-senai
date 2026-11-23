@@ -4,7 +4,7 @@ const Navbar = () => {
     return (
         <>
             <nav>
-                <button><img src="./../../catlogo.png" alt="café" /></button>
+                <button><img src="./../../glasses.png" alt="café" /></button>
                 <div className="nav-links">
                     <a href="#me">Me</a>
                     <a href="#senai">Senai</a>
