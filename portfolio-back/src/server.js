@@ -7,7 +7,7 @@ const PORT = 3333
 
 const runningServer = async () => {
     try {
-        await conn.sync()
+        await conn.sync({ force: true })
         if ((await usuario.findAll()).length === 0) {
             await usuario.create({
                 nome: "Marcos Ferreira",

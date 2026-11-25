@@ -6,10 +6,10 @@ import fs from 'node:fs'
 import path from "node:path"
 
 export const cadastroAtividade = async (req, res) => {
-    const { titulo, descricao, reflexao, auto_avaliacao, conexoes, instituicao, data, categoria } = req.body
+    const { titulo, descricao, reflexao, auto_avaliacao, conexoes, instituicao, data, categoria, link } = req.body
     const imagem = req.file ? req.file.filename : null
 
-    if (!titulo || !descricao || !imagem || !reflexao || !auto_avaliacao || !conexoes || !data || !categoria) {
+    if (!titulo || !descricao || !imagem || !reflexao || !auto_avaliacao || !conexoes || !data || !categoria || !link) {
         console.log(titulo, imagem, descricao, data, reflexao, auto_avaliacao, categoria)
         return res.status(400).json({ message: "Todos os campos precisam estar preenchidos!"})
     }
@@ -27,7 +27,8 @@ export const cadastroAtividade = async (req, res) => {
             conexoes,
             instituicao,
             data,
-            categoria
+            categoria,
+            link_projeto: link
         }
         await atividades.create(novaAtividade)
 
@@ -42,7 +43,8 @@ export const cadastroAtividade = async (req, res) => {
                 conexoes: novaAtividade.conexoes,
                 instituicao: novaAtividade.instituicao,
                 data: novaAtividade.data,
-                categoria: novaAtividade.categoria
+                categoria: novaAtividade.categoria,
+                link: novaAtividade.link_projeto
             }
         })
     } catch (error) {

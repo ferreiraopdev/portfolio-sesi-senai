@@ -68,7 +68,7 @@ const SenaiCard = ({ objeto }) => {
           <img src={`${url}/usuario/atividades/${objeto.imagem}`} alt="" />
         </button>
         <div className="titulo-data">
-          <h2>{objeto.titulo}</h2>
+          <a target="_blank" href={objeto.link_projeto}>{objeto.titulo}</a>
           <p>{data}</p>
         </div>
         <p className="desc">{objeto.descricao}</p>

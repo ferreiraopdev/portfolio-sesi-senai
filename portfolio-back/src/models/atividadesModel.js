@@ -87,7 +87,7 @@ export const atividades = conn.define('atividades',
                 }
             }
         },
-        categoria : {
+        categoria: {
             type: DataTypes.ENUM("fullstack", "frontend", "backend"),
             allowNull: false,
             validate: {
@@ -95,6 +95,10 @@ export const atividades = conn.define('atividades',
                     msg: "O campo categoria é obrigatório!"
                 }
             }
+        },
+        link_projeto: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     },
     {

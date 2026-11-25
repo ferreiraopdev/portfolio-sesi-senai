@@ -6,6 +6,7 @@ import { carregarAtividades } from "../utils/rotaGet.js";
 
 const AddAtividade = ({ token }) => {
   const [titulo, setTitulo] = useState("");
+  const [link, setLink] = useState("");
   const [descricao, setDescricao] = useState("");
   const [imagem, setImagem] = useState(null);
   const [data, setData] = useState("");
@@ -13,6 +14,7 @@ const AddAtividade = ({ token }) => {
   const [categoria, setCategoria] = useState("");
   const [reflexao, setReflexao] = useState("");
   const [conexoes, setConexoes] = useState("");
+  const [mensagem, setMensagem] = useState("")
   const navigate = useNavigate();
 
   let temImagem = false;
@@ -33,6 +35,7 @@ const AddAtividade = ({ token }) => {
     formData.append("categoria", categoria);
     formData.append("reflexao", reflexao);
     formData.append("conexoes", conexoes);
+    formData.append("link", link);
 
     try {
       const res = await fetch(`${url}/usuario/atividades`, {
@@ -42,6 +45,11 @@ const AddAtividade = ({ token }) => {
         },
         body: formData,
       });
+
+      if (res.status === 400) {
+        const dados = await res.json()
+        return setMensagem(dados.message)
+      }
 
       if (!res.ok) {
         const mensagemErro = await res.json();
@@ -140,6 +148,15 @@ const AddAtividade = ({ token }) => {
                 </option>
               </select>
             </div>
+            <div className="inp-text">
+              <h2>Link do projeto</h2>
+              <input
+                name={link}
+                onChange={(e) => setLink(e.target.value)}
+                type="text"
+                placeholder="digite aqui!"
+              />
+            </div>
           </div>
           <div className="s-atividade">
             <div className="inp-text">
@@ -170,6 +187,7 @@ const AddAtividade = ({ token }) => {
           Cadastrar
         </button>
       </form>
+      {mensagem}
     </>
   );
 };
