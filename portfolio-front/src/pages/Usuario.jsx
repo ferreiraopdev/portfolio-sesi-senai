@@ -31,6 +31,9 @@ const Usuario = ({ hasToken }) => {
                 <Link to="/usuario/pessoal" className="link-adm">
                   Pessoal
                 </Link>
+                <Link to="/" className="link-adm">
+                  Portfólio
+                </Link>
               </div>
             </div>
           ))}

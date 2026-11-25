@@ -13,6 +13,7 @@ const AddAtividade = ({ token }) => {
   const [categoria, setCategoria] = useState("");
   const [reflexao, setReflexao] = useState("");
   const [conexoes, setConexoes] = useState("");
+  const navigate = useNavigate();
 
   let temImagem = false;
 
@@ -47,126 +48,129 @@ const AddAtividade = ({ token }) => {
         throw new Error(`${mensagemErro.message}`);
       }
 
-      window.location.reload()
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <form className="a-content" onSubmit={handleSubmit}>
-      <div className="p-info">
-        <div className="p-atividade">
-          <div className="inp-text">
-            <h2>Titulo</h2>
-            <input
-              name={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
-              type="text"
-              placeholder="digite aqui!"
-            />
-          </div>
-          <div className="inp-text">
-            <h2>Descrição</h2>
-            <textarea
-              name={descricao}
-              onChange={(e) => setDescricao(e.target.value)}
-              rows="9"
-              cols="30"
-              placeholder="digite aqui!"
-            />
-          </div>
-        </div>
-        <div className="s-atividade-btn">
-          <label htmlFor="input-file-imagem">
-            {temImagem ? (
-              <img
-                className="inp-photo"
-                src={URL.createObjectURL(imagem)}
-                alt=""
-              />
-            ) : (
-              <img className="inp-photo" src="../../sem-imagem.png" alt="" />
-            )}
-          </label>
-          <input
-            id="input-file-imagem"
-            type="file"
-            name={imagem}
-            onChange={(e) => setImagem(e.target.files[0])}
-            style={{ display: "none" }}
-          />
-        </div>
-      </div>
-      <div className="s-info">
-        <div className="p-atividade">
-          <div className="inp-text">
-            <h2>Data</h2>
-            <input
-              name={data}
-              onChange={(e) => setData(e.target.value)}
-              type="date"
-              placeholder="digite aqui!"
-            />
-          </div>
-          <div className="inp-text">
-            <h2>Auto avaliação</h2>
-            <textarea
-              name={autoAvaliacao}
-              onChange={(e) => setAutoAvaliacao(e.target.value)}
-              rows="5"
-              cols="30"
-              type="text"
-              placeholder="digite aqui!"
-            />
-          </div>
-          <div className="inp-text">
-            <h2>Categoria</h2>
-            <select onChange={(e) => setCategoria(e.target.value)}>
-              <option value="*">
-                Selecione as opções
-              </option>
-              <option name="Front-end" value="frontend">
-                Front-end
-              </option>
-              <option name="Back-end" value="backend">
-                Back-end
-              </option>
-              <option name="Full-stack" value="fullstack">
-                Full-stack
-              </option>
-            </select>
-          </div>
-        </div>
-        <div className="s-atividade">
-          <div className="inp-text">
-            <h2>Reflexão</h2>
-            <textarea
-              onChange={(e) => setReflexao(e.target.value)}
-              name={reflexao}
-              rows="5"
-              cols="30"
-              type="text"
-              placeholder="digite aqui!"
-            />
-          </div>
-          <div className="inp-text">
-            <h2>Conexões</h2>
-            <textarea
-              onChange={(e) => setConexoes(e.target.value)}
-              name={conexoes}
-              rows="5"
-              cols="30"
-              type="text"
-              placeholder="digite aqui!"
-            />
-          </div>
-        </div>
-      </div>
-      <button className="btn-submit" type="submit">
-        Cadastrar
+    <>
+      <button className="voltar-pagina" onClick={() => navigate("/usuario")}>
+        ← Voltar para página principal
       </button>
-    </form>
+      <form className="a-content" onSubmit={handleSubmit}>
+        <div className="p-info">
+          <div className="p-atividade">
+            <div className="inp-text">
+              <h2>Titulo</h2>
+              <input
+                name={titulo}
+                onChange={(e) => setTitulo(e.target.value)}
+                type="text"
+                placeholder="digite aqui!"
+              />
+            </div>
+            <div className="inp-text">
+              <h2>Descrição</h2>
+              <textarea
+                name={descricao}
+                onChange={(e) => setDescricao(e.target.value)}
+                rows="9"
+                cols="30"
+                placeholder="digite aqui!"
+              />
+            </div>
+          </div>
+          <div className="s-atividade-btn">
+            <label htmlFor="input-file-imagem">
+              {temImagem ? (
+                <img
+                  className="inp-photo"
+                  src={URL.createObjectURL(imagem)}
+                  alt=""
+                />
+              ) : (
+                <img className="inp-photo" src="../../sem-imagem.png" alt="" />
+              )}
+            </label>
+            <input
+              id="input-file-imagem"
+              type="file"
+              name={imagem}
+              onChange={(e) => setImagem(e.target.files[0])}
+              style={{ display: "none" }}
+            />
+          </div>
+        </div>
+        <div className="s-info">
+          <div className="p-atividade">
+            <div className="inp-text">
+              <h2>Data</h2>
+              <input
+                name={data}
+                onChange={(e) => setData(e.target.value)}
+                type="date"
+                placeholder="digite aqui!"
+              />
+            </div>
+            <div className="inp-text">
+              <h2>Auto avaliação</h2>
+              <textarea
+                name={autoAvaliacao}
+                onChange={(e) => setAutoAvaliacao(e.target.value)}
+                rows="5"
+                cols="30"
+                type="text"
+                placeholder="digite aqui!"
+              />
+            </div>
+            <div className="inp-text">
+              <h2>Categoria</h2>
+              <select onChange={(e) => setCategoria(e.target.value)}>
+                <option value="*">Selecione as opções</option>
+                <option name="Front-end" value="frontend">
+                  Front-end
+                </option>
+                <option name="Back-end" value="backend">
+                  Back-end
+                </option>
+                <option name="Full-stack" value="fullstack">
+                  Full-stack
+                </option>
+              </select>
+            </div>
+          </div>
+          <div className="s-atividade">
+            <div className="inp-text">
+              <h2>Reflexão</h2>
+              <textarea
+                onChange={(e) => setReflexao(e.target.value)}
+                name={reflexao}
+                rows="5"
+                cols="30"
+                type="text"
+                placeholder="digite aqui!"
+              />
+            </div>
+            <div className="inp-text">
+              <h2>Conexões</h2>
+              <textarea
+                onChange={(e) => setConexoes(e.target.value)}
+                name={conexoes}
+                rows="5"
+                cols="30"
+                type="text"
+                placeholder="digite aqui!"
+              />
+            </div>
+          </div>
+        </div>
+        <button className="btn-submit" type="submit">
+          Cadastrar
+        </button>
+      </form>
+    </>
   );
 };
 
@@ -176,19 +180,19 @@ const RmAtividade = () => {
     carregarAtividades(setAtividades);
   }, []);
   const handleRemover = async (e, id) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const res = await fetch(`${url}/usuario/atividades/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       });
 
       if (!res.ok) {
-        throw new Error(`${res.status}`)
+        throw new Error(`${res.status}`);
       }
 
-      window.location.reload()
+      window.location.reload();
     } catch (error) {
-        console.log(error)
+      console.log(error);
     }
   };
   return (

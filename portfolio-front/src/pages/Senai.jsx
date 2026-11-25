@@ -3,11 +3,12 @@ import { useEffect, useState } from "react";
 import { carregarAtividades } from "../utils/rotaGet";
 import { url } from "../utils/url.js";
 import { limparData } from "../utils/limparData.js";
+import { useNavigate } from 'react-router-dom'
 
 const SenaiCard = ({ objeto }) => {
   const [imagem, setImagem] = useState(false);
   const [card, setCard] = useState(false);
-  const data = limparData(objeto.data)
+  const data = limparData(objeto.data);
   const renderizarImagem = () => {
     if (imagem) {
       return (
@@ -84,6 +85,7 @@ const Senai = () => {
   const filtrarAtividades = atividades.filter((at) =>
     at.categoria.toLowerCase().includes(tipo.toLowerCase()),
   );
+  const navigate = useNavigate()
 
   useEffect(() => {
     carregarAtividades(setAtividades);
@@ -114,8 +116,11 @@ const Senai = () => {
   return (
     <div className="main-box">
       <div className="intro-project">
-        <h1 style={{ color: "white" }}>Atividades & Projetos</h1>
-        <p>Atividades e projetos realizados durante o curso.</p>
+        <button className="voltar-pagina" onClick={() => navigate("/")}>← Voltar para página principal</button>
+        <div>
+          <h1 style={{ color: "white" }}>Atividades & Projetos</h1>
+          <p>Atividades e projetos realizados durante o curso.</p>
+        </div>
       </div>
       <hr />
       <div className="category-box">

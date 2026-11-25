@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
+  const [mensagem, setMensagem] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -22,6 +23,12 @@ const Login = () => {
           senha
         })
       })
+
+      if (res.status == 400) {
+        const dados = await res.json()
+        console.log("aaaa",dados)
+        return setMensagem(dados.message)
+      }
 
       if (!res.ok) {
         throw new Error(`${res.status} Error`)
@@ -55,6 +62,7 @@ const Login = () => {
           <button type="submit" >Enviar</button>
         </div>
       </form>
+      <p style={{padding: '1rem'}}>{mensagem}</p>
     </div>
   );
 };

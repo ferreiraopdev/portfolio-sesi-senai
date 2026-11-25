@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./css-pages/Pessoal.css";
 import { url } from "../utils/url.js";
 import { carregarPessoal } from "../utils/rotaGet.js";
+import { useNavigate } from "react-router-dom";
 
 const Pessoal = ({ hasToken }) => {
   const [pessoal, setPessoal] = useState([]);
@@ -10,6 +11,7 @@ const Pessoal = ({ hasToken }) => {
   const [aprendizado, setAprendizado] = useState("");
   const [melhorias, setMelhorias] = useState("");
   const [aplicacao, setAplicacao] = useState("");
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,7 +37,7 @@ const Pessoal = ({ hasToken }) => {
         throw new Error(`${res.status} | ${res.statusText}`);
       }
 
-      window.location.reload()
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -65,7 +67,7 @@ const Pessoal = ({ hasToken }) => {
         throw new Error(`${res.status} | ${res.statusText}`);
       }
 
-      window.location.reload()
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }
@@ -280,7 +282,14 @@ const Pessoal = ({ hasToken }) => {
     }
   };
 
-  return <>{carregarComponentes()}</>;
+  return (
+    <>
+      <button className="voltar-pagina" style={{display: 'block', margin: '0 auto', padding: '1rem'}} onClick={() => navigate("/usuario")}>
+        ← Voltar para página principal
+      </button>
+      {carregarComponentes()}
+    </>
+  );
 };
 
 export default Pessoal;
