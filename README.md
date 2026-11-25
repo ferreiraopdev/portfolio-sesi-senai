@@ -16,4 +16,4 @@ Para o cadastro desse usuário é necessário da modificação do backend, pois 
 (Mais informações no README do back)
 
 ### Frontend
-Frontend feito em React utilizando react router dom
+Frontend feito em React utilizando a biblioteca react router dom
